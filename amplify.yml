@@ -12,6 +12,7 @@ frontend:
         - yarn install
     build:
       commands:
+        - echo "NEXT_PUBLIC_AMPLITUDE_API_KEY=$AMPLITUDE_API_KEY" >> .env
         - yarn build
   artifacts:
     baseDirectory: out
@@ -22,3 +23,13 @@ frontend:
       - "node_modules/**/*"
       - "*/node_modules/**/*"
       - ".next/cache/**/*"
+test:
+  phases:
+    test:
+      commands:
+        - yarn test
+  artifacts:
+    baseDirectory: /
+    configFilePath: jest.config.js
+    files:
+      - "**/*"
