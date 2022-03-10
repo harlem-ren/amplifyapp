@@ -9,7 +9,8 @@ frontend:
   phases:
     preBuild:
       commands:
-        - npm ci
+        - nvm install 15
+        - yarn install
     build:
       commands:
         - npm run build
