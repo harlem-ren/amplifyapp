@@ -12,7 +12,6 @@ frontend:
         - yarn install
     build:
       commands:
-        - echo "NEXT_PUBLIC_AMPLITUDE_API_KEY=$AMPLITUDE_API_KEY" >> .env
         - yarn build
   artifacts:
     baseDirectory: out
