@@ -9,8 +9,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 15
-        - yarn install
+        - npm ci
     build:
       commands:
         - npm run build
@@ -20,4 +19,4 @@ frontend:
       - "**/*"
   cache:
     paths:
-      - node_modules/**/*
+      - "node_modules/**/*"
